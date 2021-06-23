@@ -17,9 +17,9 @@ def get_receivers(innset):
     return receivers
 
 def index(request):
-    checkerror=0
     if request.method == 'POST':
-        form = ProfileList(request.POST, instance=request.user)
+        print(request.POST)
+        form = ProfileList(request.POST)
         if form.is_valid():
             form=form.cleaned_data
             user=form['user']
@@ -28,7 +28,7 @@ def index(request):
             receivers=get_receivers(inn)
             cashsender=Profile.objects.get(user=user)
 
-            if cashsender.check - check >= 0:
+            if cashsender.check - check >= 0 and receivers:
                 cash_calculation(cashsender,receivers,check)
 
             return redirect('index')
@@ -37,7 +37,6 @@ def index(request):
 
     content = {
             'form':form,
-            'checkerror':checkerror,
             }
 
     return render(request, 'index.html', content)
