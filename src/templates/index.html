@@ -8,9 +8,6 @@
         <p>Пользователь:{{form.user}}</p>
         <p>ИНН:{{form.innset}}</p>
         <p>Сумма перевода:{{form.check}}</p>
-        {% if checkerror %}
-            <p>Недостаточно средств</p>
-        {% endif %}
         <input type="submit" value="pay">
     </form>
 
