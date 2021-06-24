@@ -3,6 +3,7 @@ from src.backend.models import Profile
 from src.backend.forms import ProfileList
 
 def cash_calculation(cashsender,receivers,check):
+    ''' Передача суммы для отправителя и получателя '''
     income=check/len(receivers)
     for profile in receivers:
         profile.check=profile.check+income

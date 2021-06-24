@@ -1,12 +1,8 @@
 from django.test import TestCase
 from src.backend.models import User, Profile
-from src.backend.views import index
 from src.backend.forms import ProfileList
-from django.http import HttpRequest
-from decimal import Decimal
-from django.test import Client
 
-class ItemsTestCase(TestCase):
+class ProfilesTestCase(TestCase):
     def setUp(self):
         self.user1 = User.objects.create_user(username='Олег', password='Qwerty123')
         self.user2 = User.objects.create_user(username='Николай', password='Qwerty123')
