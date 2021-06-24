@@ -18,7 +18,6 @@ def get_receivers(innset):
 
 def index(request):
     if request.method == 'POST':
-        print(request.POST)
         form = ProfileList(request.POST)
         if form.is_valid():
             form=form.cleaned_data

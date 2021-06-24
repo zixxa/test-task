@@ -31,9 +31,6 @@ class ItemsTestCase(TestCase):
             'innset': '200000000000 030000000000',
             'check': '100'
         }
-        response = self.client.post(
-            "/", data
-        )
-
+        response = self.client.post('/',data)
         self.assertEqual(response.status_code, 200)
 
