@@ -12,6 +12,5 @@ src/media
 *.pyc
 *.db
 *.pid
-*.env
 *.idea
 *.coverage
